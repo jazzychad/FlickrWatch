@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6724" systemVersion="13F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                    <items>
+                        <label width="135.5" height="0.10000000000000001" alignment="center" text="Hello, World" textAlignment="center" id="jSH-yw-FZB"/>
+                        <group width="1" height="0.69999999999999996" alignment="center" verticalAlignment="center" hasDetent="YES" id="lZw-c7-s8m">
+                            <items>
+                                <imageView width="0.23999999999999999" height="0.34200000000000003" alignment="left" verticalAlignment="center" id="DUB-If-bU7"/>
+                                <imageView width="0.23999999999999999" height="0.34200000000000003" alignment="left" verticalAlignment="center" id="lZG-9T-pZ3"/>
+                                <label width="0.040000000000000001" alignment="center" verticalAlignment="center" text=":" textAlignment="center" id="ZxD-l1-0sE"/>
+                                <imageView width="0.23999999999999999" height="0.34200000000000003" alignment="right" verticalAlignment="center" id="1nh-Nt-xhq"/>
+                                <imageView width="0.23999999999999999" height="0.34200000000000003" alignment="right" verticalAlignment="center" id="Fx7-1Y-hSr"/>
+                            </items>
+                        </group>
+                        <button width="1" height="0.20000000000000001" alignment="center" verticalAlignment="bottom" title="Settings" id="KGC-Oj-dUZ">
+                            <connections>
+                                <segue destination="lQp-RY-8wk" kind="push" id="eZ1-bR-RIe"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="digitImage0" destination="DUB-If-bU7" id="jda-el-3E9"/>
+                        <outlet property="digitImage1" destination="lZG-9T-pZ3" id="D74-cl-tD6"/>
+                        <outlet property="digitImage2" destination="1nh-Nt-xhq" id="wyw-QX-zBy"/>
+                        <outlet property="digitImage3" destination="Fx7-1Y-hSr" id="ifN-Lb-kLL"/>
+                        <outlet property="mainLabel" destination="jSH-yw-FZB" id="S8x-Yb-cWW"/>
+                        <outlet property="settingsButton" destination="KGC-Oj-dUZ" id="ajQ-Ik-Rma"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="235" y="347"/>
+        </scene>
+        <!--Settings Interface Controller-->
+        <scene sceneID="nNt-Ip-a6r">
+            <objects>
+                <controller id="lQp-RY-8wk" customClass="SettingsInterfaceController">
+                    <items>
+                        <label alignment="center" text="Settings" id="HOT-dW-HSV"/>
+                        <table alignment="left" layout="vertical" id="mcb-dS-3lL">
+                            <items>
+                                <tableRow identifier="HourType1224Row" id="Ag3-EI-QZt" customClass="SettingsRowController">
+                                    <group key="rootItem" width="1" alignment="left" id="xTP-2q-1hi">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="12hr" id="vTg-oF-6D7"/>
+                                            <imageView width="20" height="20" alignment="right" verticalAlignment="center" id="3tB-5a-Yke"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="checkImage" destination="3tB-5a-Yke" id="OZL-2j-dqD"/>
+                                        <outlet property="label" destination="vTg-oF-6D7" id="f5s-cT-yxg"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="495" y="475"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="BOz-TT-tkC">
+            <objects>
+                <glanceController spacing="0.0" id="0uZ-2p-rRc" customClass="GlanceController">
+                    <items>
+                        <group alignment="left" id="t8f-Gd-c4y"/>
+                        <group alignment="left" id="uCw-4Q-Ouw"/>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="235" y="672"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="XkS-y5-khE"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="XkS-y5-khE" id="49B-RR-99y"/>
+                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="235" y="1001"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="KIl-fV-djm">
+            <objects>
+                <controller id="gdX-wl-uQE" customClass="NotificationController"/>
+            </objects>
+            <point key="canvasLocation" x="553" y="1001"/>
+        </scene>
+    </scenes>
+</document>

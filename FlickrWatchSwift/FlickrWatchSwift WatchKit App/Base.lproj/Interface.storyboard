@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="7525" systemVersion="14C109" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7516"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3737"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="FlickrWatchSwift_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label height="0.10000000000000001" alignment="center" text="Hello, Watch" id="HVg-be-ziU"/>
+                        <group width="1" height="0.69999999999999996" alignment="left" id="eez-mq-0GG">
+                            <items>
+                                <imageView width="0.23999999999999999" alignment="left" verticalAlignment="center" id="T0x-cQ-JRa"/>
+                                <imageView width="0.23999999999999999" alignment="left" verticalAlignment="center" id="guQ-9O-FeG"/>
+                                <label width="0.040000000000000001" alignment="left" verticalAlignment="center" text=":" id="PjC-d6-DhE"/>
+                                <imageView width="0.23999999999999999" alignment="left" verticalAlignment="center" id="XIg-WA-BbW"/>
+                                <imageView width="0.23999999999999999" alignment="left" verticalAlignment="center" id="6qx-KS-LeA"/>
+                            </items>
+                        </group>
+                        <button width="1" height="0.20000000000000001" alignment="left" title="Settings" id="evc-Ms-o2O">
+                            <connections>
+                                <segue destination="MOJ-p8-NAr" kind="push" id="tZ4-rW-tbN"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="digitImage0" destination="T0x-cQ-JRa" id="sPs-Sq-h5P"/>
+                        <outlet property="digitImage1" destination="guQ-9O-FeG" id="uQ8-Ux-Qdv"/>
+                        <outlet property="digitImage2" destination="XIg-WA-BbW" id="6t9-vp-zet"/>
+                        <outlet property="digitImage3" destination="6qx-KS-LeA" id="7pg-mx-L1H"/>
+                        <outlet property="mainLabel" destination="HVg-be-ziU" id="N6k-D9-1sD"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="345"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Settings Interface Controller-->
+        <scene sceneID="cJ6-EL-xkO">
+            <objects>
+                <controller id="MOJ-p8-NAr" customClass="SettingsInterfaceController" customModule="FlickrWatchSwift_WatchKit_Extension">
+                    <items>
+                        <label alignment="center" text="Settings" id="InB-ZZ-qvO"/>
+                        <table alignment="left" id="FgH-ge-gmW">
+                            <items>
+                                <tableRow identifier="HourType1224Row" id="OlZ-t7-28Z" customClass="SettingsRowController" customModule="FlickrWatchSwift_WatchKit_Extension">
+                                    <group key="rootItem" width="1" alignment="left" id="gZd-PX-Dxc">
+                                        <items>
+                                            <label alignment="left" verticalAlignment="center" text="12hour" id="FFl-EZ-tbN"/>
+                                            <imageView width="20" height="20" alignment="right" verticalAlignment="center" id="QXf-e4-GQV"/>
+                                        </items>
+                                    </group>
+                                    <connections>
+                                        <outlet property="checkImage" destination="QXf-e4-GQV" id="rr8-xH-T4S"/>
+                                        <outlet property="label" destination="FFl-EZ-tbN" id="ULY-vZ-Ba0"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="settingsTable" destination="FgH-ge-gmW" id="NYS-Ex-OMM"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="488" y="390"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="FlickrWatchSwift_WatchKit_App" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
